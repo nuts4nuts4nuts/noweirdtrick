@@ -1,4 +1,5 @@
 #+title: Quick Sort
+[[file:index.org][Home]]
 
 * What?
 Quick sort is a quick sort.
