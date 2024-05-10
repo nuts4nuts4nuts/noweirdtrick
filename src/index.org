@@ -23,8 +23,3 @@ There is no weird trick.
 * Posts
 
 - [[file:quick-sort.org][Quick Sort]]
-
-* Local variables                                                  :noexport:
-Local variables:
-eval: (add-hook 'after-save-hook (lambda () (org-publish "noweirdtrick")))
-End:
