@@ -1,5 +1,6 @@
 #+title: No Weird Trick
 
+* About
 #+begin_quote
 Any sufficiently advanced technology is indistinguishable from magic.
 #+end_quote

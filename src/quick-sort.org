@@ -16,6 +16,9 @@ Quick sort is a quick sort.
 #+name: sort
 #+begin_src go :noweb yes
   // stuff
+  func sort (stuff []int) {
+	return stuff
+  }
 #+end_src
 
 #+name: partition
