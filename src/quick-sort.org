@@ -4,7 +4,7 @@
 Quick sort is a quick sort.
 
 #+name: fullsrc
-#+begin_src go :tangle 
+#+begin_src go :tangle :noweb yes
   <<imports>>
 
   <<partition>>
@@ -14,17 +14,12 @@ Quick sort is a quick sort.
 
 #+name: sort
 #+begin_src go :noweb yes
-
-#+end_src
-
-#+name: sort
-#+begin_src go :noweb yes
-
+  // stuff
 #+end_src
 
 #+name: partition
 #+begin_src go :noweb yes
-
+  // stuff
 #+end_src
 
 #+name: imports
