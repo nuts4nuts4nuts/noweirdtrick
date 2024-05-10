@@ -8,6 +8,12 @@
 (require 'font-lock)
 (require 'htmlize)
 
+;; Export variables 
+(setq org-export-with-sub-superscripts nil
+		org-export-with-section-numbers nil
+		org-export-with-toc nil
+		org-export-headline-levels 10)
+
 ;; Define the publishing project
 (setq org-publish-project-alist
       '(("noweirdtrick"
