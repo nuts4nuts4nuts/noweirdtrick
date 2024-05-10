@@ -8,7 +8,7 @@ Any sufficiently advanced technology is indistinguishable from magic.
 When I first heard Clarke's [[https://en.wikipedia.org/wiki/Clarke%27s_three_laws][third law]], I thought science-fiction.
 Clarke was a science-fiction author after all.
 I imagined humanity interacting with aliens and finding them incomprehensible.
-But the quote doesn't say "alien technology" or "future technology" - just "sufficiently advanced."
+But the quote doesn't say "alien technology" or "future technology" - just "sufficiently advanced technology."
 Sufficiently advanced is so personal.
 
 For babies, object permanence is sufficiently advanced.
