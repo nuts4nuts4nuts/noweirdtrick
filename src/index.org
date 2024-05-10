@@ -1,0 +1,25 @@
+* No Weird Trick
+
+#+begin_quote
+Any sufficiently advanced technology is indistinguishable from magic.
+#+end_quote
+- Arthur C. Clarke, /Profiles of the Future/, 1962
+
+When I first read or heard Clarke's quote, I thought science-fiction.
+Clarke was a science fiction author after all.
+I imagined humanity interacting with Aliens and finding them incomprehensible.
+But the quote doesn't say "alien technology" or "future technology" - just "sufficiently advanced."
+I love phrase, because "sufficiently advanced" is very personal.
+
+For me, electricity is sufficiently advanced.
+I live with it, I am comfortable with it, but I don't understand it - it may as well be magic to me.
+
+...
+
+
+There is no weird trick.
+
+** Posts
+
+- [[file:quick-sort.org][Quick Sort]]
+

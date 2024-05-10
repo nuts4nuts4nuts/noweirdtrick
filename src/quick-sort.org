@@ -1,0 +1,35 @@
+#+title: Quick Sort
+
+* What?
+Quick sort is a quick sort.
+
+#+name: fullsrc
+#+begin_src go :tangle 
+  <<imports>>
+
+  <<partition>>
+
+  <<sort>>
+#+end_src
+
+#+name: sort
+#+begin_src go :noweb yes
+
+#+end_src
+
+#+name: sort
+#+begin_src go :noweb yes
+
+#+end_src
+
+#+name: partition
+#+begin_src go :noweb yes
+
+#+end_src
+
+#+name: imports
+#+begin_src go :noweb yes
+  import (
+	  "fmt"
+  )
+#+end_src
