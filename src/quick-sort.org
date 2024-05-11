@@ -1,4 +1,4 @@
-#+title: [[file:index.org][Quick Sort]]
+#+title: Quick Sort
 
 * What?
 Quick sort is a quick sort.
