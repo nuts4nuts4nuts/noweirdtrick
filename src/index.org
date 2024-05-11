@@ -1,5 +1,9 @@
 #+title: No Weird Trick
 
+* Posts
+
+- [[file:quick-sort.org][Quick Sort]]
+
 * About
 #+begin_quote
 Any sufficiently advanced technology is indistinguishable from magic.
@@ -20,7 +24,3 @@ I live with it, I am reasonably comfortable with it, but I don't understand it -
 
 
 There is no weird trick.
-
-* Posts
-
-- [[file:quick-sort.org][Quick Sort]]

@@ -27,6 +27,6 @@
 		 :headline-levels 10)))
 
 ;; Generate the site output
-(org-publish-all t)
+(org-publish-all)
 
 (message "Build complete!")
