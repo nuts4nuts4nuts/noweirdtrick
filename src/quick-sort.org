@@ -1,33 +1,56 @@
 #+title: Quick Sort
 
-* What?
-Quick sort is a quick sort.
+* Problem
 
-#+name: fullsrc
-#+begin_src go :tangle :noweb yes
-  <<imports>>
+** Ordered lists
 
-  <<partition>>
+#+begin_src go :imports '("fmt" "math/rand")
+// Sorted lists, in ascending and descending order
+l1 := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+l2 := []int{9, 8, 7, 6, 5, 4, 3, 2, 1, 0}
 
-  <<sort>>
+// Random list
+r := rand.New(rand.NewSource(0))
+l3 := r.Perm(10)
+
+fmt.Println(l1)
+fmt.Println(l2)
+fmt.Println(l3)
 #+end_src
 
-#+name: sort
-#+begin_src go :noweb yes
-  // stuff
-  func sort (stuff []int) {
-	return stuff
-  }
-#+end_src
+#+RESULTS:
+: [0 1 2 3 4 5 6 7 8 9]
+: [9 8 7 6 5 4 3 2 1 0]
+: [8 2 3 0 5 7 1 6 9 4]
 
-#+name: partition
-#+begin_src go :noweb yes
-  // stuff
-#+end_src
+** Sorting
 
-#+name: imports
-#+begin_src go :noweb yes
-  import (
-	  "fmt"
-  )
-#+end_src
+*** Overview of algorithms
+
+* Plan
+
+*** Quick Sort
+
+**** Why Quick Sort?
+
+***** Quick, divide and conquer
+
+***** Low additional memory
+
+**** How to Quick Sort
+
+***** Partition
+
+***** Sort
+
+***** Recurr
+
+* Process
+
+** Partition
+
+** Sort
+
+** Recurr
+
+* Past

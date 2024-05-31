@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-10 Fri 22:33 -->
+<!-- 2024-05-30 Thu 23:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Quick Sort</title>
@@ -201,56 +201,150 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf00e471">What?</a></li>
+<li><a href="#orgbcc8c41">Problem</a>
+<ul>
+<li><a href="#org88007bf">Ordered lists</a></li>
+<li><a href="#org274cfa5">Sorting</a>
+<ul>
+<li><a href="#orge155f31">Overview of algorithms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbf69c57">Plan</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org0588585">Quick Sort</a>
+<ul>
+<li><a href="#org9f29cfa">Why Quick Sort?</a>
+<ul>
+<li><a href="#org0d8c00c">Quick, divide and conquer</a></li>
+<li><a href="#org1241010">Low additional memory</a></li>
+</ul>
+</li>
+<li><a href="#org1eb4d49">How to Quick Sort</a>
+<ul>
+<li><a href="#org7562a89">Partition</a></li>
+<li><a href="#org9bfeda7">Sort</a></li>
+<li><a href="#org7b3af6a">Recurr</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc06cf0a">Process</a>
+<ul>
+<li><a href="#orgb6b8e1b">Partition</a></li>
+<li><a href="#org42b8b1d">Sort</a></li>
+<li><a href="#org5068a9a">Recurr</a></li>
+</ul>
+</li>
+<li><a href="#org1ba9b50">Past</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf00e471" class="outline-2">
-<h2 id="orgf00e471">What?</h2>
-<div class="outline-text-2" id="text-orgf00e471">
-<p>
-Quick sort is a quick sort.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-go" id="org939e1e0"><span style="font-weight: bold;">import</span> (
-        <span style="font-style: italic;">"fmt"</span>
-)
-
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">stuff</span>
-
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">stuff</span>
-<span style="font-weight: bold;">func</span> <span style="font-weight: bold;">sort</span> (stuff []<span style="font-weight: bold; text-decoration: underline;">int</span>) {
-      <span style="font-weight: bold;">return</span> stuff
-}
-</pre>
+<div id="outline-container-orgbcc8c41" class="outline-2">
+<h2 id="orgbcc8c41">Problem</h2>
+<div class="outline-text-2" id="text-orgbcc8c41">
 </div>
-
+<div id="outline-container-org88007bf" class="outline-3">
+<h3 id="org88007bf">Ordered lists</h3>
+<div class="outline-text-3" id="text-org88007bf">
 <div class="org-src-container">
-<pre class="src src-go" id="org90a41d1"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">stuff</span>
-<span style="font-weight: bold;">func</span> <span style="font-weight: bold;">sort</span> (stuff []<span style="font-weight: bold; text-decoration: underline;">int</span>) {
-      <span style="font-weight: bold;">return</span> stuff
-}
-</pre>
-</div>
+<pre class="src src-go"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Sorted lists, in ascending and descending order</span>
+<span style="font-weight: bold; font-style: italic;">l1</span> := []<span style="font-weight: bold; text-decoration: underline;">int</span>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+<span style="font-weight: bold; font-style: italic;">l2</span> := []<span style="font-weight: bold; text-decoration: underline;">int</span>{9, 8, 7, 6, 5, 4, 3, 2, 1, 0}
 
-<div class="org-src-container">
-<pre class="src src-go" id="org70389be"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">stuff</span>
-</pre>
-</div>
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Random list</span>
+<span style="font-weight: bold; font-style: italic;">r</span> := rand.<span style="font-weight: bold;">New</span>(rand.<span style="font-weight: bold;">NewSource</span>(0))
+<span style="font-weight: bold; font-style: italic;">l3</span> := r.<span style="font-weight: bold;">Perm</span>(10)
 
-<div class="org-src-container">
-<pre class="src src-go" id="orged78748"><span style="font-weight: bold;">import</span> (
-        <span style="font-style: italic;">"fmt"</span>
-)
+fmt.<span style="font-weight: bold;">Println</span>(l1)
+fmt.<span style="font-weight: bold;">Println</span>(l2)
+fmt.<span style="font-weight: bold;">Println</span>(l3)
 </pre>
 </div>
 </div>
+</div>
+
+<div id="outline-container-org274cfa5" class="outline-3">
+<h3 id="org274cfa5">Sorting</h3>
+<div class="outline-text-3" id="text-org274cfa5">
+</div>
+<div id="outline-container-orge155f31" class="outline-4">
+<h4 id="orge155f31">Overview of algorithms</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbf69c57" class="outline-2">
+<h2 id="orgbf69c57">Plan</h2>
+<div class="outline-text-2" id="text-orgbf69c57">
+</div>
+<div id="outline-container-org0588585" class="outline-4">
+<h4 id="org0588585">Quick Sort</h4>
+<div class="outline-text-4" id="text-org0588585">
+</div>
+<div id="outline-container-org9f29cfa" class="outline-5">
+<h5 id="org9f29cfa">Why Quick Sort?</h5>
+<div class="outline-text-5" id="text-org9f29cfa">
+</div>
+<div id="outline-container-org0d8c00c" class="outline-6">
+<h6 id="org0d8c00c">Quick, divide and conquer</h6>
+</div>
+
+<div id="outline-container-org1241010" class="outline-6">
+<h6 id="org1241010">Low additional memory</h6>
+</div>
+</div>
+
+<div id="outline-container-org1eb4d49" class="outline-5">
+<h5 id="org1eb4d49">How to Quick Sort</h5>
+<div class="outline-text-5" id="text-org1eb4d49">
+</div>
+<div id="outline-container-org7562a89" class="outline-6">
+<h6 id="org7562a89">Partition</h6>
+</div>
+
+<div id="outline-container-org9bfeda7" class="outline-6">
+<h6 id="org9bfeda7">Sort</h6>
+</div>
+
+<div id="outline-container-org7b3af6a" class="outline-6">
+<h6 id="org7b3af6a">Recurr</h6>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc06cf0a" class="outline-2">
+<h2 id="orgc06cf0a">Process</h2>
+<div class="outline-text-2" id="text-orgc06cf0a">
+</div>
+<div id="outline-container-orgb6b8e1b" class="outline-3">
+<h3 id="orgb6b8e1b">Partition</h3>
+</div>
+
+<div id="outline-container-org42b8b1d" class="outline-3">
+<h3 id="org42b8b1d">Sort</h3>
+</div>
+
+<div id="outline-container-org5068a9a" class="outline-3">
+<h3 id="org5068a9a">Recurr</h3>
+</div>
+</div>
+
+<div id="outline-container-org1ba9b50" class="outline-2">
+<h2 id="org1ba9b50">Past</h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-05-10 Fri 22:33</p>
+<p class="date">Created: 2024-05-30 Thu 23:00</p>
 </div>
 </body>
 </html>
